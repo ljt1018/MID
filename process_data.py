@@ -99,7 +99,12 @@ data_columns = pd.MultiIndex.from_product([['position', 'velocity', 'acceleratio
 
 # Process ETH-UCY
 # for desired_source in ['eth', 'hotel', 'univ', 'zara1', 'zara2']:
-for desired_source in ['10%', '30%', '50%', '100%']:
+for desired_source in ['multi_scene',
+                       '10%/eth', '10%/hotel', '10%/univ', '10%/zara1', '10%/zara2',
+                       '30%/eth', '30%/hotel', '30%/univ', '30%/zara1', '30%/zara2',
+                       '50%/eth', '50%/hotel', '50%/univ', '50%/zara1', '50%/zara2',
+                       '100%/eth', '100%/hotel', '100%/univ', '100%/zara1', '100%/zara2',
+                       ]:
     for data_class in ['train', 'val', 'test']:
         env = Environment(node_type_list=['PEDESTRIAN'], standardization=standardization)
         attention_radius = dict()
